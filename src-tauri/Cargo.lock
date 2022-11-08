@@ -2068,6 +2068,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "raw-cpuid"
+version = "10.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a6823ea29436221176fe662da99998ad3b4db2c7f31e7b6f5fe43adccd6320bb"
+dependencies = [
+ "bitflags",
+]
+
+[[package]]
 name = "raw-window-handle"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2833,6 +2842,7 @@ dependencies = [
 name = "taurifetch"
 version = "0.0.0"
 dependencies = [
+ "raw-cpuid",
  "serde",
  "serde_json",
  "tauri",

@@ -1,11 +1,14 @@
 :root {
   align-items: center;
+
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+
   color: #0f0f0f;
   background-color: #f6f6f6;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -42,11 +45,13 @@
 
 .os_logo {
   height: 100%;
+
   display: block;
   margin: 0 auto;
-}
-.os_logo:hover {
-  filter: drop-shadow(0 0 2em #24C8DB);
+
+  &:hover {
+    filter: drop-shadow(0 0 2em #24C8DB);
+  }
 }
 
 .user {
@@ -59,39 +64,51 @@
   text-align: center;
 }
 
-#os:hover {
+@mixin button_hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: white;  
 }
 
-#uptime:hover {
-  border-radius: 20px;
-  border-color: white;
+#os {
+  &:hover {
+    @include button_hover();
+  }
 }
 
-#packages:hover {
-  border-radius: 20px;
-  border-color: white;
+#uptime {
+  &:hover {
+    @include button_hover();
+  }
 }
 
-#shell:hover {
-  border-radius: 20px;
-  border-color: white;
+#packages {
+  &:hover {
+    @include button_hover();
+  }
 }
 
-#gui:hover {
-  border-radius: 20px;
-  border-color: white;
+#shell {
+  &:hover {
+    @include button_hover();
+  }
 }
 
-#cpu:hover {
-  border-radius: 20px;
-  border-color: white;
+#gui {
+  &:hover {
+    @include button_hover();
+  }
 }
 
-#gpu:hover {
-  border-radius: 20px;
-  border-color: white;
+#cpu {
+  &:hover {
+    @include button_hover();
+  }
+}
+
+#gpu {
+  &:hover {
+    @include button_hover();
+  }
 }
 
 .container {
@@ -123,9 +140,10 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+  &:hover {
+    color: #535bf2;
+  }
 }
 
 h1 {
@@ -148,9 +166,10 @@ button {
 
 button {
   cursor: pointer;
-}
-buttonhover {
-  border-color: #396cd8;
+
+  &hover {
+    border-color: #396cd8;
+  }
 }
 
 input,
@@ -167,12 +186,14 @@ button {
     color: #f6f6f6;
     background-color: #2f2f2f;
   }
+
   a:hover {
     color: #24c8db;
   }
+
   input,
-button {
+  button {
     color: #ffffff;
-    background-color: rgba(15, 15, 15, 0.5960784314);
+    background-color: #0f0f0f98;
   }
-}/*# sourceMappingURL=style.css.map */
+}
