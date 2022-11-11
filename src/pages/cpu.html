@@ -5,19 +5,29 @@
     <link rel="stylesheet" href="../style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>taurifetch - OS</title>
-    <script type="module" src="./main.js" defer></script>
+    <script type="module" src="./javascript/cpu.js" defer></script>
   </head>
   <body>
     <button onclick="location.href = '../index.html';" id="back"><i class="arrow left"></i></button>
 
     <div class="info">
-      <button>SSE support: </button>
-      <br></br>
-      <button>L1-Cache Size: </button>
-      <br></br>
-      <button>L2-Cache Size: </button>
-      <br></br>
-      <button>L3-Cache Size: </button>
+      <div class="info">
+        <button id="cpu">CPU model: </button>
+        <br></br>
+        <button id="cpu_manufacturer">CPU manufacturer: </button>
+        <br></br>
+        <button id="cpu_cores">Number of cores: </button>
+        <br></br>
+        <button id="cpu_threads">Number of threads: </button>
+        <br></br>
+        <button id="sse">SSE support: </button>
+        <br></br>
+        <button id="l1">L1-Cache size: </button>
+        <br></br>
+        <button id="l2">L2-Cache size: </button>
+        <br></br>
+        <button id="l3">L3-Cache size: </button>
+      </div>
     </div>
   </body>
 </html>
