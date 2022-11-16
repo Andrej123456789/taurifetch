@@ -49,13 +49,13 @@
   filter: drop-shadow(0 0 2em #24C8DB);
 }
 
-.user {
-  margin-top: 10px;
+.info {
+  margin-top: 40px;
   text-align: center;
 }
 
-.info {
-  margin-top: 40px;
+#user {
+  margin-top: 10px;
   text-align: center;
 }
 
