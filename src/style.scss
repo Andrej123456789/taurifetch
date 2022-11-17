@@ -64,6 +64,14 @@
   text-align: center;
 }
 
+#warning {
+  color: yellow;
+  
+  &:hover {
+    color: yellowgreen;
+  }
+}
+
 @mixin button_hover {
   border-radius: 20px;
   border-color: white;  

@@ -21,3 +21,11 @@ export function SetSecondaryElement(id, function_name) {
     .then((message) => (button_x.innerHTML = start_text + message))
     .catch((error) => console.error(error));
 }
+
+export function UpdateClock(base_text, id, function_name) {
+  let button_x = document.getElementById(id);
+
+  invoke(function_name)
+    .then((message) => (button_x.innerHTML = base_text + message))
+    .catch((error) => console.log(error));
+}

@@ -11,9 +11,13 @@
     <button onclick="location.href = '../index.html';" id="back"><i class="arrow left"></i></button>
 
     <div class="info">
-      <button id="os2">Uptime: </button>
+      <button id="uptime_two" onclick="Uptime(); setInterval('Uptime()',  0.01 )">Uptime (click for live reloading): </button>
       <br></br>
-      <button id="kernel">Seconds from epoch: </button>
+      <button id="epoch" onclick="Epoch(); setInterval('Epoch()',  0.01 )">Seconds from epoch (click for live reloading): </button>
+      <br></br>
+      <button id="epoch_nice" onclick="EpochNice(); setInterval('EpochNice()',  0.01 )">Seconds from epoch in nicer way (click for live reloading): </button>
+
+      <h4 id="warning">EPILEPSY WARNING - CLOCK WILL REFRESH BY DEAFULT EACH 0.01 ms</h4>
     </div>
   </body>
 </html>

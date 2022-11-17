@@ -59,6 +59,13 @@
   text-align: center;
 }
 
+#warning {
+  color: yellow;
+}
+#warning:hover {
+  color: yellowgreen;
+}
+
 #os:hover {
   border-radius: 20px;
   border-color: white;

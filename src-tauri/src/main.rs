@@ -17,8 +17,6 @@ fn user_computer() -> String{
     for_return.push_str(&at);
     for_return.push_str(&hostname);
 
-    println!("{}", for_return);
-
     return for_return
 }
 
@@ -29,6 +27,8 @@ fn main() {
             pages::os::os_name,
             pages::os::distro,
             pages::uptime::uptime,
+            pages::uptime::epoch,
+            pages::uptime::epoch_nice,
             pages::packages::packages,
             pages::shell::shell,
             pages::gui::gui,
