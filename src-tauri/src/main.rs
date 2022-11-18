@@ -3,11 +3,11 @@
     windows_subsystem = "windows"
 )]
 
-mod pages;
 mod functions;
+mod pages;
 
 #[tauri::command]
-fn user_computer() -> String{
+fn user_computer() -> String {
     let user: String = whoami::username().to_string();
     let hostname: String = whoami::hostname().to_string();
     let at: String = String::from("@");
@@ -17,7 +17,7 @@ fn user_computer() -> String{
     for_return.push_str(&at);
     for_return.push_str(&hostname);
 
-    return for_return
+    return for_return;
 }
 
 fn main() {
@@ -33,6 +33,13 @@ fn main() {
             pages::shell::shell,
             pages::gui::gui,
             pages::cpu::cpu,
+            pages::cpu::cpu_manufacturer,
+            pages::cpu::cpu_cores,
+            pages::cpu::cpu_threads,
+            pages::cpu::sse_support,
+            pages::cpu::l1_cache,
+            pages::cpu::l2_cache,
+            pages::cpu::l3_cache,
             pages::gpu::gpu
         ])
         .run(tauri::generate_context!())
