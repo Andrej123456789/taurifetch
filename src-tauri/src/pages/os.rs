@@ -1,3 +1,5 @@
+use sysinfo::{System, SystemExt};
+
 use crate::functions::utils;
 
 #[tauri::command]
@@ -6,12 +8,14 @@ pub fn os_name() -> String {
 }
 
 #[tauri::command]
+pub fn kernel_version() -> String {
+    let mut sys = System::new_all();
+
+    sys.refresh_all();
+    sys.kernel_version().unwrap().to_string()
+}
+
+#[tauri::command]
 pub fn distro() -> String {
-    let mut base: String = String::from("N/A");
-
-    if os_name() == "Linux" {
-        base = whoami::distro();
-    }
-
-    return base;
+    return whoami::distro().to_string();
 }

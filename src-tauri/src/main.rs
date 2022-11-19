@@ -25,6 +25,7 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             user_computer,
             pages::os::os_name,
+            pages::os::kernel_version,
             pages::os::distro,
             pages::uptime::uptime,
             pages::uptime::epoch,
