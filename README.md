@@ -19,3 +19,4 @@ neofetch but written using [Tauri](https://tauri.app/)
 
 ## Resources used
 - [Fireship's video](https://www.youtube.com/watch?v=-X8evddpu7M)
+- [StackOverflow question 56300132](https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting)

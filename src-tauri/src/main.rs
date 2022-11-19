@@ -3,8 +3,45 @@
     windows_subsystem = "windows"
 )]
 
+use std::fs::File;
+use std::io::prelude::*;
+use std::path::Path;
+
 mod functions;
 mod pages;
+
+#[tauri::command]
+fn theme_name(new_theme: String) -> String {
+    let filename = ".theme.txt";
+
+    if Path::new(filename).exists() == false {
+        let mut file = File::create(filename).expect("Error encountered while creating file!");
+
+        file.write_all(b"dark")
+            .expect("Error while writing to file! (1)");
+    }
+
+    if new_theme == "none" {
+        let mut file = File::open(filename).expect("File not found!");
+        let mut data = String::new();
+        file.read_to_string(&mut data)
+            .expect("Error while reading file! (2)");
+        println!("{}", data);
+
+        return data;
+    } else {
+        if Path::new(filename).exists() == true {
+            std::fs::remove_file(filename).expect("Error occured while trying to delete file!");
+        }
+
+        let mut file = File::create(filename).expect("Error encountered while creating file!");
+
+        file.write_all(new_theme.as_bytes())
+            .expect("Error while writing to file! (3)");
+    }
+
+    return new_theme;
+}
 
 #[tauri::command]
 fn user_computer() -> String {
@@ -23,6 +60,7 @@ fn user_computer() -> String {
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
+            theme_name,
             user_computer,
             pages::os::os_name,
             pages::os::kernel_version,

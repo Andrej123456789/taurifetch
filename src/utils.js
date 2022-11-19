@@ -29,3 +29,7 @@ export function UpdateClock(base_text, id, function_name) {
     .then((message) => (button_x.innerHTML = base_text + message))
     .catch((error) => console.log(error));
 }
+
+export function ChangeVar(name, value) {
+  document.documentElement.style.setProperty(name, value)
+}

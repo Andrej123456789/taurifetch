@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   align-items: center;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -46,7 +47,7 @@
   margin: 0 auto;
 }
 .os_logo:hover {
-  filter: drop-shadow(0 0 2em #24C8DB);
+  filter: drop-shadow(0 0 2em #24c8db);
 }
 
 .info {
@@ -55,7 +56,7 @@
 }
 
 #back:hover {
-  border-color: white;
+  border-color: var(--border-color);
   border-radius: 30cm;
 }
 
@@ -73,37 +74,37 @@
 
 #os:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #uptime:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #packages:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #shell:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #gui:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #cpu:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 #gpu:hover {
   border-radius: 20px;
-  border-color: white;
+  border-color: var(--border-color);
 }
 
 .container {
@@ -174,10 +175,44 @@ button {
   margin-right: 5px;
 }
 
+/* automatic/manual light mode */
+:root,
+:root.light {
+  --ff: black;
+  --bg: rgb(211, 200, 200);
+  --border-color: white;
+}
+
+/* automatic dark mode */
+/* ❗️ keep the rules in sync with the manual dark mode below! */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: f6f6f6;
+    --bg: 2f2f2f;
+    --border-color: white;
+  }
+}
+/* manual dark mode */
+/* ❗️ keep the rules in sync with the automatic dark mode above! */
+:root.dark {
+  --fg: f6f6f6;
+  --bg: 2f2f2f;
+  --border-color: white;
+}
+
+/* use the variables */
+body {
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f6f6f6;
     background-color: #2f2f2f;
+  }
+  :root.light {
+    background-color: var(--bg);
   }
   a:hover {
     color: #24c8db;
