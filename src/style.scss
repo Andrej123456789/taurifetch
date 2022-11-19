@@ -59,6 +59,13 @@
   text-align: center;
 }
 
+#back {
+  &:hover {
+    border-color: white;
+    border-radius: 30cm;
+  }
+}
+
 #user {
   margin-top: 10px;
   text-align: center;
