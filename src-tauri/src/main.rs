@@ -26,8 +26,7 @@ fn theme_name(new_theme: String) -> String {
         let mut data = String::new();
         file.read_to_string(&mut data)
             .expect("Error while reading file! (2)");
-        println!("{}", data);
-
+            
         return data;
     } else {
         if Path::new(filename).exists() == true {
