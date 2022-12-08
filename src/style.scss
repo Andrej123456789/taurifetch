@@ -80,8 +80,9 @@
 }
 
 @mixin button_hover {
-  border-radius: 20px;
+  border-radius: 40px;
   border-color: var(--border-color);
+  border-width: 3px;
 }
 
 #os {
@@ -196,33 +197,24 @@ button {
   margin-right: 5px;
 }
 
-/* automatic/manual light mode */
+/* Light mode */
 :root,
 :root.light {
-  --ff: black;
-  --bg: rgb(211, 200, 200);
-  --border-color: white;
+  --fg: #2f2f2f;
+  --bg: #f6f6f6;
+  --border-color: black;
 }
 
-/* automatic dark mode */
-/* ❗️ keep the rules in sync with the manual dark mode below! */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg: f6f6f6;
-    --bg: 2f2f2f;
+    --fg: #f6f6f6;
+    --bg: #2f2f2f;
     --border-color: white;
   }
 }
 
-/* manual dark mode */
-/* ❗️ keep the rules in sync with the automatic dark mode above! */
-:root.dark {
-  --fg: f6f6f6;
-  --bg: 2f2f2f;
-  --border-color: white;
-}
-
-/* use the variables */
+/* Use the variables */
 body {
   color: var(--fg);
   background-color: var(--bg);
@@ -230,11 +222,12 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
+    color: var(--fg);
+    background-color: var(--bg);
   }
 
   :root.light {
+    color: var(--fg);
     background-color: var(--bg);
   }
 
@@ -245,6 +238,6 @@ body {
   input,
   button {
     color: #ffffff;
-    background-color: #0f0f0f98;
+    background-color: rgba(15, 15, 15, 0.5960784314);
   }
 }
