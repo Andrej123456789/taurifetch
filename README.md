@@ -1,3 +1,5 @@
+**PROJECT IS DONE**
+
 # taurifetch
 neofetch but written using [Tauri](https://tauri.app/)
 
